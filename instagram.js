@@ -24,11 +24,14 @@ storyElements.forEach((storyElement) => {
 // 앞서 정의한 storyModal 에 eventListener를 추가하세요.
 // eventType은 'click' 이며, eventHandler의 기능은 다음과 같습니다.
 // eventHandler 기능 : 앞서 정의한 storyModal의 style.display 속성을 "none"으로 바꿈.
+const storyModalContent = document.querySelector(".story-modal-content");
 storyModal.addEventListener(
   // PUT YOUR CODE HERE
   "click",
-  () => {
-    storyModal.style.display = "none";
+  (event) => {
+    if (event.target === storyModal) {
+      storyModal.style.display = "none";
+    }
   }
 );
 
@@ -66,6 +69,7 @@ profile_container.addEventListener(
 const likeCount = document.getElementById("like-count");
 const blackHeart = document.getElementById("black-heart");
 const redHeart = document.getElementById("red-heart");
+const notification = document.querySelector(".like-notification");
 
 // TODO1. 검정색 하트를 눌렀을 때
 blackHeart.addEventListener("click", () => {
@@ -78,6 +82,12 @@ blackHeart.addEventListener("click", () => {
 
   // 좋아요 갯수를 하나 늘려서 likeCount 요소의 내부 텍스트로 저장하세요.
   likeCount.innerText = parseInt(count) + 1; // PUT YOUR CODE HERE...
+
+  //notification.style.display = "block";
+  notification.classList.add("show");
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, 2000);
 });
 
 // TODO2. 빨간색 하트를 눌렀을 때
@@ -153,3 +163,25 @@ const deleteComment = (id) => {
     )
     .join("");
 };
+
+const emoticonButton = document.querySelector(".smile");
+const emoticonModal = document.querySelector(".emoticon-modal");
+const emoticonBlock = document.querySelector(".emoticon");
+const emoticonItems = document.querySelectorAll(".emoticon-item");
+const emoticonTitle = document.querySelector(".emoticon-title");
+const comment = document.querySelector(".comment");
+
+emoticonButton.addEventListener("click", () => {
+  emoticonBlock.style.display = "block";
+});
+
+emoticonTitle.addEventListener("click", () => {
+  emoticonBlock.style.display = "none";
+});
+
+emoticonItems.forEach((emoticonItem) => {
+  emoticonItem.addEventListener("click", () => {
+    const emoticon = emoticonItem.textContent;
+    comment.value += emoticon;
+  });
+});

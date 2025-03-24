@@ -9,7 +9,7 @@
   <body>
     <main class="main-container">
       <header class="header">
-        <img class="logo" src="./images/logo.png" />
+        <a href=""><img class="logo" src="./images/logo.png" /></a>
         <input class="search" placeholder="검색" />
         <img class="icon-list" src="./images/icon_list.png" />
       </header>
@@ -39,7 +39,9 @@
         </div>
 
         <div class="story-modal">
-          <img id="story-image" src="./images/profile.png" />
+          <div class="story-modal-content">
+            <img id="story-image" src="./images/profile.png" />
+          </div>
         </div>
 
         <!-- 피드 부분 코드 시작 : content-container 내부에 추가 -->
@@ -81,9 +83,48 @@
               <button type="submit" class="comment-button">게시</button>
             </div>
           </form>
+
+          <div class="emoticon-modal">
+            <div class="emoticon">
+              <div class="emoticon-title">
+                <span><strong>이모티콘</strong></span>
+              </div>
+              <div class="emoticon-select">
+                <span class="emoticon-item">😊</span>
+                <span class="emoticon-item">😀</span>
+                <span class="emoticon-item">😁</span>
+                <span class="emoticon-item">😂</span>
+                <span class="emoticon-item">😅</span>
+                <span class="emoticon-item">🥳</span>
+                <span class="emoticon-item">😋</span>
+                <span class="emoticon-item">😎</span>
+                <span class="emoticon-item">😍</span>
+                <span class="emoticon-item">🥲</span>
+                <span class="emoticon-item">🤔</span>
+                <span class="emoticon-item">🤨</span>
+                <span class="emoticon-item">😴</span>
+                <span class="emoticon-item">😒</span>
+                <span class="emoticon-item">🫠</span>
+                <span class="emoticon-item">🤮</span>
+              </div>
+            </div>
+          </div>
+
           <div class="written-comments-container"></div>
         </section>
       </div>
+
+      <div class="like-notification">
+        <div class="like-notification-1">
+          <span><strong>우선순위</strong></span>
+        </div>
+        <div class="like-notification-2">
+          <img class="like-profile" src="./images/default_profile.png" />
+          <span><strong>cho58</strong>님이 회원님의 게시물을 좋아합니다.</span>
+          <img class="like-article" src="./images/bed_computer.jpg" />
+        </div>
+      </div>
+
       <!-- 피드 부분 코드 끝 -->
 
       <footer>

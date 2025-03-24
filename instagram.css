@@ -28,6 +28,10 @@
   height: 100%; /* 30px */
 }
 
+.header .icon-list:hover {
+  opacity: 0.6;
+}
+
 /* 아래 부분 추가 */
 .story-container {
   display: flex;
@@ -112,6 +116,10 @@
   width: 40px;
   margin-left: 3px;
 }
+.feed-buttons:hover {
+  opacity: 0.6;
+}
+
 /* button-container 부분 끝 */
 
 /* comment container 부분 시작*/
@@ -194,4 +202,62 @@
   height: 12px;
   cursor: pointer;
   display: none;
+}
+
+/* 좋아요 알림 */
+.like-notification {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  right: -600px;
+  background-color: gray;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.like-notification.show {
+  transform: translateX(-650px);
+}
+
+.like-notification-1 {
+  padding-bottom: 15px;
+}
+
+.like-notification-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.like-notification-2 img {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
+.like-profile {
+  border-radius: 50%;
+}
+
+/* 이모티콘 */
+.emoticon {
+  display: none;
+  position: absolute;
+  width: 280px;
+  top: 550px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: small;
+  border-radius: 10px;
+}
+
+.emoticon-title {
+  padding: 10px 0px 10px 10px;
+}
+
+.emoticon-select {
+  padding: 0px 10px 10px 10px;
+  font-size: large;
 }
