@@ -217,7 +217,7 @@
 .emoji-modal {
   position: fixed;
   bottom: 80px;
-  left: 50px;
+  left: 30%;
   background-color: white;
   border: 1px solid #ddd;
   padding: 12px 16px;
