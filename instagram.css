@@ -146,3 +146,118 @@
   color: gray;
   font-size: 15px;
 }
+
+.story-modal {
+  display: none; /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1; /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 허용 auto */
+  cursor: pointer; /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8); /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 모달 가운데에 놓기 */
+}
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+.comment-wrapper:hover > .comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+#alarm_img {
+  position: fixed;
+  top: 80px;
+  right: -300px; /* 화면 밖에서 시작 */
+  width: 300px; /* 이미지 크기에 맞게 조절 */
+  transition: right 0.5s ease-in-out;
+  z-index: 999;
+}
+
+.comments-create-form {
+  width: 100%;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.smile {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Emoji Modal Styles */
+.emoji-modal {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.emoji-modal.visible {
+  display: block;
+}
+
+.emoji-modal-title {
+  color: white;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.emoji {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.1s;
+  text-align: center;
+}
+
+.emoji:hover {
+  transform: scale(1.2);
+}
