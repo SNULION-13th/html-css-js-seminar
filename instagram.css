@@ -147,3 +147,52 @@
   color: gray;
   font-size: 15px;
 }
+
+/*0322*/
+.story-modal {
+  display: none; /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1; /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 허용 auto */
+  cursor: pointer; /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8); /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 모달 가운데에 놓기 */
+}
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+
+.comment-wrapper:hover > .comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
