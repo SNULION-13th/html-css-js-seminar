@@ -24,7 +24,6 @@ storyElements.forEach((storyElement) => {
 // 앞서 정의한 storyModal 에 eventListener를 추가하세요.
 // eventType은 'click' 이며, eventHandler의 기능은 다음과 같습니다.
 // eventHandler 기능 : 앞서 정의한 storyModal의 style.display 속성을 "none"으로 바꿈.
-storyModal.addEventListener("click", () => (storyModal.style.display = "none"));
 
 // TODO1. "profile-container" 클래스 요소 취득하기
 const profile_container = document.querySelector(".profile-container");
