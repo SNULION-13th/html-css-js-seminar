@@ -16,8 +16,8 @@ storyElements.forEach((storyElement) => {
 // storyModal 변수에 저장하세요.
 // getElementById? querySelector? querySelectorAll? 무엇을 사용할지 고민해보세요.
 
-const storyModal = document.querySelector(".story-modal"); // PUT YOUR CODE HERE...
-const storyElements = document.querySelectorAll(".story-element");
+//const storyModal = document.querySelector(".story-modal"); // PUT YOUR CODE HERE...
+//const storyElements = document.querySelectorAll(".story-element");
 
 // TODO2. "story-element" 클래스 div가 클릭될 시 "story-modal" 클래스 요소 보여주기
 
@@ -26,24 +26,26 @@ const storyElements = document.querySelectorAll(".story-element");
 // eventType은 'click' 이며, eventHandler의 기능은 다음과 같습니다.
 // eventHandler 기능 : 앞서 정의한 storyModal 의 style.display 속성을 "block"으로 바꿈.
 
-storyElements.forEach((storyElement) => {
-  // PUT YOUR CODE HERE...
-  storyElement.addEventListener("click", () => {
-    storyModal.style.display = "block";
-  });
-});
+// storyElements.forEach((storyElement) => {
+//   // PUT YOUR CODE HERE...
+//   storyElement.addEventListener("click", () => {
+//     storyModal.style.display = "block";
+//   });
+// });
 
 // TODO3.
 // 앞서 정의한 storyModal 에 eventListener를 추가하세요.
 // eventType은 'click' 이며, eventHandler의 기능은 다음과 같습니다.
 // eventHandler 기능 : 앞서 정의한 storyModal의 style.display 속성을 "none"으로 바꿈.
-storyModal.addEventListener(
-  // PUT YOUR CODE HERE
-  "click",
-  () => {
-    storyModal.style.display = "none";
-  }
-);
+// storyModal.addEventListener(
+//   // PUT YOUR CODE HERE
+//   "click",
+//   () => {
+//     storyModal.style.display = "none";
+//   }
+// );
+
+// 기능 2
 
 // TODO1. "profile-container" 클래스 요소 취득하기
 const profile_container = document.querySelector(".profile-container"); // PUT YOUR CODE HERE...
@@ -109,64 +111,64 @@ redHeart.addEventListener("click", () => {
   likeCount.innerText = count - 1; // PUT YOUR CODE HERE...
 });
 
-// 실습4
-const commentsCreateForm = document.querySelector(".comments-create-form");
-const commentContainer = document.querySelector(".written-comments-container");
-const commentInput = document.querySelector(".comment");
+// // 실습4
+// const commentsCreateForm = document.querySelector(".comments-create-form");
+// const commentContainer = document.querySelector(".written-comments-container");
+// const commentInput = document.querySelector(".comment");
 
-// 댓글의 내용을 저장할 자료구조
-const commentsList = [];
-let commentId = 0;
+// // 댓글의 내용을 저장할 자료구조
+// const commentsList = [];
+// let commentId = 0;
 
-// form 태그 제출 시 이벤트 핸들링. event(e)를 인자로 받아 event 정보를 취득. 매우 중요
-commentsCreateForm.addEventListener("submit", (e) => {
-  // TODO1. form 태그가 클릭 되었을 때 페이지 이동을 막고 댓글 내용을 취득하기
-  e.preventDefault();
-  const commentText = commentInput.value;
-  if (!commentText) return;
-  commentsList.push(commentText);
+// // form 태그 제출 시 이벤트 핸들링. event(e)를 인자로 받아 event 정보를 취득. 매우 중요
+// commentsCreateForm.addEventListener("submit", (e) => {
+//   // TODO1. form 태그가 클릭 되었을 때 페이지 이동을 막고 댓글 내용을 취득하기
+//   e.preventDefault();
+//   const commentText = commentInput.value;
+//   if (!commentText) return;
+//   commentsList.push(commentText);
 
-  // TODO2. 댓글 내용이 표시될 HTML노드를 만들어주기
-  // 이렇게 string 형식으로 HTML요소를 만들어서 HTML파일에 삽입할 수 있어요!
-  commentId = commentsList.length;
-  const commentNode = `
-    <div class="comment-wrapper">
-      <span class="comment">${commentText}</span>
-      <img
-        id="${commentId}" 
-        class="comment-delete-icon" 
-        onclick="deleteComment(${commentId})" 
-        src="./images/close.png" 
-        alt="comment" 
-      />
-    </div>
-  `;
+//   // TODO2. 댓글 내용이 표시될 HTML노드를 만들어주기
+//   // 이렇게 string 형식으로 HTML요소를 만들어서 HTML파일에 삽입할 수 있어요!
+//   commentId = commentsList.length;
+//   const commentNode = `
+//     <div class="comment-wrapper">
+//       <span class="comment">${commentText}</span>
+//       <img
+//         id="${commentId}"
+//         class="comment-delete-icon"
+//         onclick="deleteComment(${commentId})"
+//         src="./images/close.png"
+//         alt="comment"
+//       />
+//     </div>
+//   `;
 
-  // TODO3. "written-comments-container"에 댓글 HTML노드를 추가해주기
-  // 채팅창 값은 비워주기
-  commentContainer.innerHTML = commentContainer.innerHTML + commentNode;
-  commentInput.value = "";
-});
+//   // TODO3. "written-comments-container"에 댓글 HTML노드를 추가해주기
+//   // 채팅창 값은 비워주기
+//   commentContainer.innerHTML = commentContainer.innerHTML + commentNode;
+//   commentInput.value = "";
+// });
 
-// 실습 5
+// // 실습 5
 
-const deleteComment = (id) => {
-  // TODO1. commentsList 의 id번째 원소를 하나 삭제합니다.
-  // 우리가 각 comment의 id 를 commentsList 에서의 순서로 설정했기에 가능합니다.
-  commentsList.splice(id, 1);
+// const deleteComment = (id) => {
+//   // TODO1. commentsList 의 id번째 원소를 하나 삭제합니다.
+//   // 우리가 각 comment의 id 를 commentsList 에서의 순서로 설정했기에 가능합니다.
+//   commentsList.splice(id, 1);
 
-  // TODO2. 새로운 commentsList에 map 함수를 호출하여
-  // 댓글 HTML 노드들로 이루어진 배열을 만듭니다.
-  // join 함수를 이용해 배열 원소들을 하나의 스트링으로 만들어
-  // commentContainer의 innerHTML에 저장합니다.
+//   // TODO2. 새로운 commentsList에 map 함수를 호출하여
+//   // 댓글 HTML 노드들로 이루어진 배열을 만듭니다.
+//   // join 함수를 이용해 배열 원소들을 하나의 스트링으로 만들어
+//   // commentContainer의 innerHTML에 저장합니다.
 
-  commentContainer.innerHTML = commentsList
-    .map(
-      (comment, index) => `
-  <div class="comment-wrapper">
-    <span class="comment">${comment}</span>
-    <img id="${index}" class="comment-delete-icon" onclick="deleteComment(${index})" src="./images/close.png" alt="comment" />
-  </div>`
-    )
-    .join("");
-};
+//   commentContainer.innerHTML = commentsList
+//     .map(
+//       (comment, index) => `
+//   <div class="comment-wrapper">
+//     <span class="comment">${comment}</span>
+//     <img id="${index}" class="comment-delete-icon" onclick="deleteComment(${index})" src="./images/close.png" alt="comment" />
+//   </div>`
+//     )
+//     .join("");
+// };

@@ -62,6 +62,9 @@
             id="black-heart"
             src="./images/feed_like_button.png"
           />
+          <div id="notification" class="hidden">
+            @thisis_moo님이 회원님의 게시물을 좋아합니다.
+          </div>
           <img
             id="red-heart"
             class="feed-buttons"
@@ -77,6 +80,20 @@
         <form class="comments-create-form">
           <div class="comment-container">
             <img class="smile" src="./images/smile.png" />
+            <div class="emoticon">
+              <!-- 이모티콘 감싸는 박스를 display:absolute로 ..-->
+              최고 인기 이모티콘
+              <ul class="emoticon-box" style="list-style-type: none">
+                <li class="emo" data-emoji="😀">😀</li>
+                <li class="emo" data-emoji="😂">😂</li>
+                <li class="emo" data-emoji="😍">😍</li>
+                <li class="emo" data-emoji="🤔">🤔</li>
+                <li class="emo" data-emoji="🤗">🤗</li>
+                <li class="emo" data-emoji="🦄">🦄</li>
+                <li class="emo" data-emoji="🦁">🦁</li>
+                <li class="emo" data-emoji="❤️">❤️</li>
+              </ul>
+            </div>
             <input class="comment" placeholder="댓글 달기..." />
             <button class="comment-button">게시</button>
           </div>
@@ -91,5 +108,6 @@
     </main>
 
     <script src="./instagram.js"></script>
+    <script src="./homework.js"></script>
   </body>
 </html>
