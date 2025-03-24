@@ -37,6 +37,9 @@
             <div class="story-owner">jennierubyjane</div>
           </div>
         </div>
+        <div class="story-modal">
+          <img id="story-image" src="./images/profile.png" />
+        </div>
 
         <section class="article-container">
           <div class="profile-container">
@@ -46,22 +49,46 @@
             </div>
             <div class="menu"></div>
           </div>
+
+          <div class="profile-modal">
+            <img id="profile-modal" src="./images/likelion_snu.png" />
+          </div>
+
           <img class="article" src="./images/article.jpg" />
           <div class="button-container">
-            <img class="feed-buttons" src="./images/feed_like_button.png" />
+            <img
+              class="feed-buttons"
+              id="black-heart"
+              src="./images/feed_like_button.png"
+            />
+            <img
+              class="feed-buttons"
+              id="red-heart"
+              src="./images/red-heart.png"
+            />
             <img class="feed-buttons" src="./images/feed_comment_button.png" />
             <img class="feed-buttons" src="./images/feed_share_button.png" />
+
+            <div id="like-count-text">
+              <span>좋아요</span>
+              <span id="like-count">1003</span>
+            </div>
           </div>
-          <div class="comment-container">
-            <img class="smile" src="./images/smile.png" />
-            <input class="comment" placeholder="댓글 달기..." />
-            <button class="comment-button">게시</button>
-          </div>
+          <form class="comments-create-form">
+            <div class="comment-container">
+              <img class="smile" src="./images/smile.png" />
+              <input class="comment" placeholder="댓글 달기..." />
+              <button class="comment-button">게시</button>
+            </div>
+          </form>
+
+          <div class="written-comments-container"></div>
         </section>
         <footer>
           <p class="footer-message">Ⓒ2025 LIONGRAM</p>
         </footer>
       </div>
     </main>
+    <script src="./instagram.js"></script>
   </body>
 </html>
