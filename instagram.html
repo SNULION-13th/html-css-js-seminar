@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./instagram.css" />
+    <title>Liongram</title>
+  </head>
+
+  <body>
+    <main class="main-container">
+      <header class="header">
+        <img class="logo" src="./images/logo.png" />
+        <input class="search" placeholder="검색" />
+        <img class="icon-list" src="./images/icon_list.png" />
+      </header>
+      <div class="content-container">
+        <div class="story-container">
+          <div class="story-element">
+            <div class="story"></div>
+            <div class="story-owner">내 스토리</div>
+          </div>
+          <div class="story-element">
+            <div class="story"></div>
+            <div class="story-owner">xeesoxee</div>
+          </div>
+          <div class="story-element">
+            <div class="story"></div>
+            <div class="story-owner">e0_jin_03</div>
+          </div>
+          <div class="story-element">
+            <div class="story"></div>
+            <div class="story-owner">j._.woonly</div>
+          </div>
+          <div class="story-element">
+            <div class="story"></div>
+            <div class="story-owner">jennierubyjane</div>
+          </div>
+          <div class="goodalert">
+            <p>❤️ <strong>DongIn</strong>님이 회원님의 게시물을 좋아합니다.</p>
+          </div>
+        </div>
+        <!-- 과제용 추가 -->
+        <div class="story-modal">
+          <img id="story-image" src="./images/profile.png" />
+        </div>
+        <!-- 과제용 추가 -->
+        <section class="article-container">
+          <div class="profile-container">
+            <div class="profile">
+              <img class="profile-image" src="./images/profile.png" />
+              <span class="profile-name">likelion_snu</span>
+            </div>
+            <div class="menu"></div>
+          </div>
+
+          <div class="profile-modal">
+            <img id="profile-modal" src="./images/likelion_snu.png" />
+          </div>
+
+          <img class="article" src="./images/article.jpg" />
+          <div class="button-container">
+            <img
+              class="feed-buttons"
+              id="black-heart"
+              src="./images/feed_like_button.png"
+            />
+            <img
+              id="red-heart"
+              class="feed-buttons"
+              src="./images/red-heart.png"
+            />
+            <img class="feed-buttons" src="./images/feed_comment_button.png" />
+            <img class="feed-buttons" src="./images/feed_share_button.png" />
+            <div id="like-count-text">
+              <span>좋아요</span>
+              <span id="like-count">1003</span>
+            </div>
+          </div>
+          <div class="emoticon-dropdown">
+            <form class="comments-create-form">
+              <div class="comment-container">
+                <img class="smile" src="./images/smile.png" />
+                <input class="comment" placeholder="댓글 달기..." />
+                <button type="submit" class="comment-button">게시</button>
+              </div>
+            </form>
+            <!--과제용 추가-->
+            <div class="emoticon-list">
+              <p><strong> 최고 인기 이모티콘 </strong></p>
+              <div class="break"></div>
+              <div class="emoticon">😂</div>
+              <div class="emoticon">😮</div>
+              <div class="emoticon">😍</div>
+              <div class="emoticon">😢</div>
+              <div class="emoticon">👏</div>
+              <div class="emoticon">🔥</div>
+              <div class="emoticon">🎉</div>
+              <div class="break"></div>
+              <div class="emoticon">💯</div>
+              <div class="emoticon">🧡</div>
+              <div class="emoticon">🤣</div>
+              <div class="emoticon">🥰</div>
+              <div class="emoticon">😘</div>
+              <div class="emoticon">😭</div>
+              <div class="emoticon">😊</div>
+            </div>
+          </div>
+          <div class="written-comments-container"></div>
+        </section>
+      </div>
+      <footer>
+        <p class="footer-message">Ⓒ2023 LIONGRAM</p>
+      </footer>
+    </main>
+    <script src="./instagram.js"></script>
+  </body>
+</html>
