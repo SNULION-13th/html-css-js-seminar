@@ -28,7 +28,6 @@
   height: 100%; /* 30px */
 }
 
-/* 아래 부분 추가 */
 .story-container {
   display: flex;
   flex-direction: row;
@@ -58,7 +57,6 @@
   font-size: 8px;
 }
 
-/* 피드 부분 시작 */
 
 .article-container {
   display: flex;
@@ -68,7 +66,6 @@
   border: 2px solid #d3d3d3;
 }
 
-/* profile-container 부분 시작 */
 .profile-container {
   padding: 10px;
   display: flex;
@@ -96,15 +93,12 @@
   background-image: radial-gradient(circle, black 2px, transparent 2.1px);
   background-size: 100% 33.33%;
 }
-/* profile-container 부분 끝 */
 
-/* 이미지 부분 시작*/
 .article {
   width: 100%;
 }
-/* 이미지 부분 시작*/
 
-/* button-container 부분 시작 */
+
 .button-container {
   border-bottom: 2px solid #d3d3d3;
   padding-top: 5px;
@@ -113,9 +107,7 @@
   width: 40px;
   margin-left: 3px;
 }
-/* button-container 부분 끝 */
 
-/* comment container 부분 시작*/
 .comment-container {
   padding: 5px 0px;
   display: flex;
@@ -124,6 +116,7 @@
 
 .smile {
   width: 30px;
+
 }
 
 .comment {
@@ -138,9 +131,7 @@
   color: blue;
   opacity: 50%;
 }
-/* comment container 부분 끝*/
 
-/* 피드 부분 끝*/
 
 .footer-message {
   display: flex;
@@ -148,3 +139,109 @@
   color: gray;
   font-size: 15px;
 }
+
+.story-modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  cursor: pointer; 
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+#profile-modal {
+	display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left : 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart{
+  display: none;
+}
+
+.comment-wrapper:hover > .comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+
+#custom-alert {
+  position: fixed;
+  top: 20px;
+  right: -400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: right 0.5s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+#custom-alert img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#custom-alert.show {
+  right: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.emoji-modal {
+  display: none;
+  position: fixed;
+  background: black;
+  color: rgb(200, 191, 191);
+  font-family: sans-serif;
+  padding: 10px;
+  z-index: 9999;
+  opacity:85%;
+  border-radius: 10px;
+
+}
+
+.emoji-container {
+  display: flex;
+  gap: 5px;
+}
+
+.emoji {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0px;
+}
+
