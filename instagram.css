@@ -123,6 +123,29 @@
   padding: 5px 0px;
   display: flex;
   width: 100%;
+  position: relative;
+}
+
+.emoticon {
+  position: absolute;
+  top: -250%; /* 부모 요소 세로보다 위로 3배 이동 */
+  left: -10%;
+  background-color: #3b3737;
+  color: white;
+  opacity: 0.9;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: none;
+}
+
+.emo {
+  padding: 5px;
+}
+
+.emoticon-box {
+  display: flex;
+  padding: 0px;
 }
 
 .smile {
@@ -198,4 +221,22 @@
   height: 12px;
   cursor: pointer;
   display: none;
+}
+
+#notification {
+  position: fixed;
+  top: 20px;
+  right: -300px; /* 화면 오른쪽 바깥에 숨김 */
+  width: 250px;
+  padding: 10px;
+  background-color: #373535;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out; /* 애니메이션 효과 */
+}
+
+#notification.show {
+  /*처음에는 show가 없었다가 js에서 좋아요 누르면 추가해주는 기능.*/
+  transform: translateX(-320px); /* 왼쪽으로 슬라이딩 */
 }
