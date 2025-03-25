@@ -1,0 +1,311 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  border-bottom: 2px solid #d3d3d3;
+  padding-bottom: 10px;
+}
+
+.header .logo {
+  height: 100%; /* 30px */
+}
+
+.header .search {
+  padding: 3px;
+  border: 2px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+.header .icon-list {
+  height: 100%; /* 30px */
+}
+
+/* 아래 부분 추가 */
+.story-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-right: 20%;
+  padding-left: 20%;
+  height: 20%;
+}
+
+.story-container .story-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-container .story {
+  width: 40px;
+  height: 40px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.story-container .story-owner {
+  margin-top: 2px;
+  font-size: 8px;
+}
+
+/* 피드 부분 시작 */
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 10px auto;
+  border: 2px solid #d3d3d3;
+}
+
+/* profile-container 부분 시작 */
+.profile-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  width: 20%;
+  display: flex;
+}
+
+.profile-name {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.profile-image {
+  width: 20px;
+  border-radius: 10px;
+}
+
+.menu {
+  width: 20px;
+  height: 20px;
+  background-image: radial-gradient(circle, black 2px, transparent 2.1px);
+  background-size: 100% 33.33%;
+}
+/* profile-container 부분 끝 */
+
+/* 이미지 부분 시작*/
+.article {
+  width: 100%;
+}
+/* 이미지 부분 시작*/
+
+/* button-container 부분 시작 */
+.button-container {
+  border-bottom: 2px solid #d3d3d3;
+  padding-top: 5px;
+}
+.feed-buttons {
+  width: 40px;
+  margin-left: 3px;
+}
+/* button-container 부분 끝 */
+
+/* comment container 부분 시작*/
+.comment-container {
+  padding: 5px 0px;
+  display: flex;
+  width: 100%;
+}
+
+.smile {
+  width: 30px;
+}
+
+.comment {
+  height: 25px;
+  border: none;
+  width: 80%;
+}
+
+.comment-button {
+  border: none;
+  background-color: rgb(0, 0, 0, 0);
+  color: blue;
+  opacity: 50%;
+}
+/* comment container 부분 끝*/
+
+/* 피드 부분 끝*/
+
+.footer-message {
+  display: flex;
+  justify-content: center;
+  color: gray;
+  font-size: 15px;
+}
+
+/*3주차 실습*/
+
+.story-modal {
+  display: none; /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1; /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 허용 auto */
+  cursor: pointer; /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8); /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 모달 가운데에 놓기 */
+  cursor: auto;
+}
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+
+.comment-wrapper:hover > .comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+.like-notification {
+  position: absolute;
+  top: 100px;
+  right: -350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 350px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  border-radius: 10px;
+  transition: right 0.5s ease, opacity 0.5s ease;
+}
+
+.emo-modal {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: black;
+  color: gray;
+  font-size: large;
+  font-weight: 600;
+  text-indent: 10px;
+  width: 300px;
+  height: 120px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.emo-modal span {
+  margin-top: 5px;
+}
+
+.emo-first-line {
+  display: flex;
+  justify-content: space-around;
+}
+
+.emo-second-line {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.emoticon {
+  width: 10%;
+  height: auto;
+  padding: 5px;
+}
+
+#emo-1:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-2:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-3:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-4:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-5:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-6:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-7:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-8:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-9:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-10:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-11:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-12:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-13:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+#emo-14:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
