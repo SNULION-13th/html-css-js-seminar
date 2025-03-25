@@ -106,3 +106,8 @@ const deleteComment = (id) => {
 // 실습6
 const footer = document.querySelector(".footer-message");
 footer.innerText = `Ⓒ ${new Date().getFullYear()} INSTAGRAM FROM META`;
+
+const refreshLogo = document.getElementById("refresh-logo");
+refreshLogo.addEventListener("click", () => {
+  location.reload(); // 또는 location.href = location.href;
+});
