@@ -149,15 +149,8 @@ const icons = document.querySelectorAll(
   ".logo, .search, .icon-list, .profile, .article, #black-heart, #red-heart"
 );
 icons.forEach((icon) => {
-  icon.addEventListener("mouseover", () => {
-    icon.style.opacity = "0.5";
-  });
-});
-// mouseout 하면 투명도 원상복귀
-icons.forEach((icon) => {
-  icon.addEventListener("mouseout", () => {
-    icon.style.opacity = "1";
-  });
+  icon.addEventListener("mouseover", () => (icon.style.opacity = "0.5"));
+  icon.addEventListener("mouseout", () => (icon.style.opacity = "1"));
 });
 
 /* --------------- 8. 이모지 모달 --------------- */
