@@ -153,11 +153,18 @@
   opacity: 50%;
 }
 
-.emoji-container {
+.emoji-modal {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.emoji-text {
+  display: none;
+  padding: 5px 5px 0px 5px;
+  font-size: 20px;
+  color: white;
 }
 
 .emoji {
