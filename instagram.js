@@ -38,23 +38,20 @@ likeCountNum = likeCount.innerText;
 const blackHeart = document.getElementById("black-heart");
 const redHeart = document.getElementById("red-heart");
 
-// 검정색 하트를 눌렀을 때
-blackHeart.addEventListener("click", () => {
+blackHeart.addEventListener("click", function () {
   redHeart.style.display = "inline";
   blackHeart.style.display = "none";
-
-  const count = likeCount.innerText;
-  likeCount.innerText = parseInt(count) + 1;
+  likeCount.innerText = parseInt(likeCount.innerText) + 1;
+  showNotification("❤️ 최재혁님이 회원님의 게시물을 좋아합니다!", this);
 });
 
-// 빨간색 하트를 눌렀을 때
-redHeart.addEventListener("click", () => {
+redHeart.addEventListener("click", function () {
   blackHeart.style.display = "inline";
   redHeart.style.display = "none";
-
-  const count = likeCount.innerText;
-  likeCount.innerText = parseInt(count) - 1;
+  likeCount.innerText = parseInt(likeCount.innerText) - 1;
+  showNotification("💔 최재혁님이 회원님의 게시물을 안좋아합니다?", this);
 });
+
 
 // 실습 4
 const commentsCreateForm = document.querySelector(".comments-create-form");
@@ -120,38 +117,32 @@ refreshLogo.addEventListener("click", () => {
 });
 
 // 알림창 생성 함수
+// 변경된 showNotification
 function showNotification(text) {
   const notification = document.createElement("div");
   notification.className = "notification";
   notification.innerText = text;
   document.body.appendChild(notification);
 
-  notification.addEventListener("animationend", e => {
+  // Remove once slide‑out finishes
+  notification.addEventListener("animationend", (e) => {
     if (e.animationName === "slide-out") notification.remove();
   });
 }
 
+
+
 // 기존 하트 클릭 핸들러 수정: showNotification 호출 추가
-blackHeart.addEventListener("click", () => {
-  redHeart.style.display = "inline";
-  blackHeart.style.display = "none";
-  likeCount.innerText = parseInt(likeCount.innerText) + 1;
-  showNotification("❤️ 최재혁님이 회원님의 게시물을 좋아합니다!");
-});
-
-redHeart.addEventListener("click", () => {
-  blackHeart.style.display = "inline";
-  redHeart.style.display = "none";
-  likeCount.innerText = parseInt(likeCount.innerText) - 1;
-  showNotification("💔 최재혁님이 회원님의 게시물을 안좋아합니다? ");
-});
-
 const emojiModal = document.querySelector(".emoji-modal");
 const smileIcon = document.querySelector(".smile");
 
+
 // 모달 열기
-smileIcon.addEventListener("click", () => {
-  emojiModal.style.display = "flex";
+smileIcon.addEventListener("click", (e) => {
+  const rect = smileIcon.getBoundingClientRect();
+  emojiModal.style.display = "block";
+  emojiModal.style.top = `${rect.bottom + window.scrollY + 5}px`; // 5px gap
+  emojiModal.style.left = `${rect.left + window.scrollX}px`;
 });
 
 // 이모티콘 선택 또는 모달 외부 클릭 시 닫기 & 댓글 입력
