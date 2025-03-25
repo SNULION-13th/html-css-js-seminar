@@ -1,12 +1,19 @@
 // 실습1
 const storyModal = document.querySelector(".story-modal");
 const storyElements = document.querySelectorAll(".story-element");
+const storyImage = document.getElementById("story-image");
+
 
 storyElements.forEach((e) => {
   e.addEventListener("click", () => {
     storyModal.style.display = "block";
   });
 });
+
+storyImage.addEventListener("click", (event) => {
+  event.stopPropagation(); // 이벤트 전파 막기
+});
+
 
 storyModal.addEventListener("click", () => {
   storyModal.style.display = "none";
@@ -109,5 +116,50 @@ footer.innerText = `Ⓒ ${new Date().getFullYear()} INSTAGRAM FROM META`;
 
 const refreshLogo = document.getElementById("refresh-logo");
 refreshLogo.addEventListener("click", () => {
-  location.reload(); // 또는 location.href = location.href;
+  location.reload(); 
+});
+
+// 알림창 생성 함수
+function showNotification(text) {
+  const notification = document.createElement("div");
+  notification.className = "notification";
+  notification.innerText = text;
+  document.body.appendChild(notification);
+
+  notification.addEventListener("animationend", e => {
+    if (e.animationName === "slide-out") notification.remove();
+  });
+}
+
+// 기존 하트 클릭 핸들러 수정: showNotification 호출 추가
+blackHeart.addEventListener("click", () => {
+  redHeart.style.display = "inline";
+  blackHeart.style.display = "none";
+  likeCount.innerText = parseInt(likeCount.innerText) + 1;
+  showNotification("❤️ 최재혁님이 회원님의 게시물을 좋아합니다!");
+});
+
+redHeart.addEventListener("click", () => {
+  blackHeart.style.display = "inline";
+  redHeart.style.display = "none";
+  likeCount.innerText = parseInt(likeCount.innerText) - 1;
+  showNotification("💔 최재혁님이 회원님의 게시물을 안좋아합니다? ");
+});
+
+const emojiModal = document.querySelector(".emoji-modal");
+const smileIcon = document.querySelector(".smile");
+
+// 모달 열기
+smileIcon.addEventListener("click", () => {
+  emojiModal.style.display = "flex";
+});
+
+// 이모티콘 선택 또는 모달 외부 클릭 시 닫기 & 댓글 입력
+emojiModal.addEventListener("click", (e) => {
+  if (e.target.classList.contains("emoji-item")) {
+    commentInput.value += e.target.innerText;
+    emojiModal.style.display = "none";
+  } else if (!e.target.closest(".emoji-content")) {
+    emojiModal.style.display = "none";
+  }
 });

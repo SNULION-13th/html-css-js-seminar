@@ -18,6 +18,13 @@
   height: 100%;
 }
 
+#refresh-logo:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+
 .header .search {
   padding: 3px;
   border: 2px solid #d3d3d3;
@@ -85,6 +92,28 @@
 .profile-image {
   width: 20px;
   border-radius: 10px;
+}
+
+/* 헤더 아이콘 hover 효과 */
+.header .icon-list:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+
+/* 피드 버튼(하트, 댓글, 공유) hover 효과 */
+.feed-buttons:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+
+.logo img {
+  height: 30px;
+}
+
+.logo {
+  align-items: center;
 }
 
 .menu {
@@ -209,4 +238,64 @@
   height: 12px;
   cursor: pointer;
   display: none;
+}
+
+/* --- 슬라이드 알림창 --- */
+.notification {
+  position: fixed;
+  bottom: 650px;
+  right: -300px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  animation: slide-in 0.5s forwards, slide-out 0.5s forwards 2.5s;
+}
+
+@keyframes slide-in {
+  from { right: -300px; opacity: 0; }
+  to   { right: 20px; opacity: 1; }
+}
+
+@keyframes slide-out {
+  from { right: 20px; opacity: 1; }
+  to   { right: -300px; opacity: 0; }
+}
+
+
+.emoji-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center; justify-content: center;
+  z-index: 1000;
+}
+
+.emoji-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.emoji-item {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.emoji-item:hover {
+  transform: scale(1.3);
 }
