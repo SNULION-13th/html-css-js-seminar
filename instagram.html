@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="instagram.css" />
+  <script src="main.js" defer></script>
   <title>Liongram</title>
 </head>
+
 <body>
   <main class="main-container">
     <header class="header">
@@ -13,56 +16,92 @@
       <input class="search" placeholder="검색" />
       <img class="icon-list" src="./images/icon_list.png" />
     </header>
-  </main>
 
-  <content class="content-container">
-    <div class="story-container">
-      <div class="story-element">
-        <div class="story"></div>
-        <div class="story-owner">내 스토리</div>
+    <content class="content-container">
+      <div class="story-container">
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">내 스토리</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">kid_oooooh</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jjang_jyo</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">hm_son7</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jennierubyjane</div>
+        </div>
       </div>
-      <div class="story-element">
-        <div class="story"></div>
-        <div class="story-owner">kid_oooooh</div>
+      <div class="story-modal">
+        <img id="story-image" src="./images/profile.png" />
       </div>
-      <div class="story-element">
-        <div class="story"></div>
-        <div class="story-owner">jjang_jyo</div>
+    </content>
+    <!-- 피드 부분 코드 시작 : content-container 내부에 추가 -->
+    <section class="article-container">
+      <div class="profile-container">
+        <div class="profile">
+          <img class="profile-image" src="./images/profile.png" />
+          <span class="profile-name">likelion_snu</span>
+        </div>
+        <div class="menu"></div>
       </div>
-      <div class="story-element">
-        <div class="story"></div>
-        <div class="story-owner">hm_son7</div>
+      <div class="profile-modal">
+        <img id="profile-modal" src="./images/likelion_snu.png" />
       </div>
-      <div class="story-element">
-        <div class="story"></div>
-        <div class="story-owner">jennierubyjane</div>
+
+      <img class="article" src="./images/article.jpg" />
+      <div class="button-container">
+        <img class="feed-buttons" id="black-heart" src="./images/feed_like_button.png" />
+        <img id="red-heart" class="feed-buttons" src="./images/red-heart.png" />
+
+        <img class="feed-buttons" src="./images/feed_comment_button.png" />
+        <img class="feed-buttons" src="./images/feed_share_button.png" />
+        <div id="like-count-text">
+          <span>좋아요</span>
+          <span id="like-count">1003</span>
+        </div>
+      <!-- hw시작-->
+       <div id="like-notification">
+         00님이 당신의 게시물을 좋아합니다!
+        <!--<img src="../html-css-js-seminar/images/like_alert.png">-->
+       </div>
+       <!-- hw끝-->
       </div>
-    </div>
-  </content>
-  <!-- 피드 부분 코드 시작 : content-container 내부에 추가 -->
-  <section class="article-container">
-    <div class="profile-container">
-      <div class="profile">
-        <img class="profile-image" src="./images/profile.png" />
-        <span class="profile-name">likelion_snu</span>
+      <form class="comments-create-form">
+        <div class="comment-container">
+          <img class="smile" src="./images/smile.png" />
+
+          <input class="comment" placeholder="댓글 달기..." />
+          <button class="comment-button">게시</button>
+        </div>
+      </form>
+      <!--hw5 modal start-->
+      <div class="emoticon-modal">
+        <span> 최고 인기 이모티콘</span>
+        <div class="emoticon-modal-emoticons">
+          <p>😂</p><p>😲</p><p>😍</p><p>😢</p><p>👏</p><p>🔥</p><p>🎉</p>      
+        </div>
+        <div class="emoticon-modal-emoticons">
+          <p>💯</p><p>❤️</p><p>🤣</p><p>🥰</p><p>😘</p><p>😭</p><p>🙂</p>  
+        </div>
       </div>
-      <div class="menu"></div>
-    </div>
-    <img class="article" src="./images/article.jpg" />
-    <div class="button-container">
-      <img class="feed-buttons" src="./images/feed_like_button.png" />
-      <img class="feed-buttons" src="./images/feed_comment_button.png" />
-      <img class="feed-buttons" src="./images/feed_share_button.png" />
-    </div>
-    <div class="comment-container">
-      <img class="smile" src="./images/smile.png" />
-      <input class="comment" placeholder="댓글 달기..." />
-      <button class="comment-button">게시</button>
-    </div>
-  </section>
+      <!--hw5 modal end-->
+      <div class="written-comments-container">
+      </div>
+    </section>
+  </main>
   <!-- 피드 부분 코드 끝 -->
   <footer>
     <p class="footer-message">Ⓒ2024 LIONGRAM</p>
   </footer>
 </body>
+
 </html>

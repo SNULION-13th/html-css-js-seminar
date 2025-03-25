@@ -15,7 +15,8 @@
 }
 
 .header .logo {
-  height: 100%; /* 30px */
+  height: 100%;
+  /* 30px */
 }
 
 .header .search {
@@ -25,7 +26,8 @@
 }
 
 .header .icon-list {
-  height: 100%; /* 30px */
+  height: 100%;
+  /* 30px */
 }
 
 
@@ -97,12 +99,14 @@
   background-image: radial-gradient(circle, black 2px, transparent 2.1px);
   background-size: 100% 33.33%;
 }
+
 /* profile-container 부분 끝 */
 
 /* 이미지 부분 시작*/
 .article {
   width: 100%;
 }
+
 /* 이미지 부분 시작*/
 
 /* button-container 부분 시작 */
@@ -110,10 +114,12 @@
   border-bottom: 2px solid #d3d3d3;
   padding-top: 5px;
 }
+
 .feed-buttons {
   width: 40px;
   margin-left: 3px;
 }
+
 /* button-container 부분 끝 */
 
 /* comment container 부분 시작*/
@@ -139,6 +145,7 @@
   color: blue;
   opacity: 50%;
 }
+
 /* comment container 부분 끝*/
 
 /* 피드 부분 끝*/
@@ -148,4 +155,118 @@
   justify-content: center;
   color: gray;
   font-size: 15px;
+}
+
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+
+.story-modal {
+  display: none;
+  /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1;
+  /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* 스크롤 허용 auto */
+  cursor: pointer;
+  /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 모달 가운데에 놓기 */
+}
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+
+.comment-wrapper:hover>.comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+/*숙제 시작*/
+.emoticon-modal {
+  /*display: none;*/
+  background-color: rgb(51, 51, 51);
+  width:80%;
+  margin:10px;
+  padding: 18px;
+  color: rgb(138, 138, 138);
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+  display:none;
+}
+.emoticon-modal-emoticons{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  font-size: 40px;
+  height: 80px;
+  align-items: center;
+  justify-items: center;
+
+}
+.emoticon-modal-emoticons >p{
+  padding: 0 10px;
+  align-items: center;
+  margin: 0;
+
+}
+.emoticon-modal-emoticons >p:hover{
+  cursor: pointer;
+  background-color: rgba(129, 138, 138, 0.575);
+  padding:0px;
+  transform: scale(1.3);
+  border-radius: 10px;
+
+}
+.icon-list:hover{
+  opacity: 40%;
+}
+
+.feed-buttons:hover{
+  opacity: 40%;
+}
+#like-notification{
+  background-color: pink;
+  color: black;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: none;
 }
