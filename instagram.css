@@ -12,10 +12,11 @@
   height: 30px;
   border-bottom: 2px solid #d3d3d3;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .header .logo {
-  height: 100%; /* 30px */
+  height: 100%;
 }
 
 .header .search {
@@ -25,7 +26,19 @@
 }
 
 .header .icon-list {
-  height: 100%; /* 30px */
+  height: 100%;
+}
+
+.header .like-notification {
+  visibility: hidden;
+  width: 55%;
+  height: auto;
+  right: -110%;
+  position: absolute;
+  top: calc(100%);
+  z-index: 1;
+  border-radius: 20px;
+  transition: right 0.5s ease-in-out;
 }
 
 .story-container {
@@ -56,8 +69,6 @@
   margin-top: 2px;
   font-size: 8px;
 }
-
-/* 피드 부분 시작 */
 
 .article-container {
   display: flex;
@@ -96,19 +107,29 @@
   background-size: 100% 33.33%;
 }
 
+/* profile-container 부분 끝 */
+
+/* 이미지 부분 시작*/
 .article {
   width: 100%;
 }
 
+/* 이미지 부분 끝*/
+
+/* button-container 부분 시작 */
 .button-container {
   border-bottom: 2px solid #d3d3d3;
   padding-top: 5px;
 }
+
 .feed-buttons {
   width: 40px;
   margin-left: 3px;
 }
 
+/* button-container 부분 끝 */
+
+/* comment container 부분 시작*/
 .comment-container {
   padding: 5px 0px;
   display: flex;
@@ -132,9 +153,85 @@
   opacity: 50%;
 }
 
+.emoji-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+}
+
+.emoji {
+  display: none;
+  font-size: 50px;
+}
+
+/* comment container 부분 끝*/
+
+/* 피드 부분 끝*/
+
 .footer-message {
   display: flex;
   justify-content: center;
   color: gray;
   font-size: 15px;
+}
+
+/* 실습1 */
+
+.story-modal {
+  display: none;
+  /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1;
+  /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* 스크롤 허용 auto */
+  cursor: pointer;
+  /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 모달 가운데에 놓기 */
+}
+
+/* 실습2 */
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+/* 실습3 */
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+
+/* 실습4 */
+.comment-wrapper:hover > .comment-delete-icon {
+  display: inline;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
 }
