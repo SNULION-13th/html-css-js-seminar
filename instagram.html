@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--추가할 코드-->
+    <link rel="stylesheet" type="text/css" href="./instagram.css" />
+    <!--추가할 코드-->
+    <title>Liongram</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <div class="logo-container">
+          <img class="logo" src="./images/logo.png" />
+        </div>
+        <input class="search" placeholder="검색" />
+        <div class="icon-list-container">
+          <div class="icon-list part1"></div>
+          <div class="icon-list part2"></div>
+          <div class="icon-list part3"></div>
+          <div class="icon-list part4"></div>
+        </div>
+      </header>
+    </div>
+
+    <div class="content-container">
+      <div class="story-container">
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">내 스토리</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">kid_oooooh</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jjang_jyo</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">hm_son7</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jennierubyjane</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-modal">
+      <img id="story-image" src="./images/profile.png" />
+    </div>
+
+    <div class="like-modal-background">
+      <div class="like-modal">
+        <img id="like-alarm-image" src="./images/like_alarm.webp" />
+      </div>
+    </div>
+
+    <div class="article-container">
+      <div class="profile-container">
+        <div class="profile">
+          <img class="profile-image" src="./images/profile.png" />
+          <span class="profile-name">likelion_snu</span>
+          <div class="profile-modal">
+            <img id="profile-modal" src="./images/likelion_snu.png" />
+          </div>
+        </div>
+        <div class="menu"></div>
+      </div>
+      <img class="article" src="./images/article.jpg" />
+      <div class="button-container">
+        <div class="feed-buttons-container">
+          <img
+            class="feed-buttons"
+            id="black-heart"
+            src="./images/feed_like_button.png"
+          />
+          <img
+            class="feed-buttons"
+            id="red-heart"
+            src="./images/red-heart.png"
+          />
+          <img class="feed-buttons" src="./images/feed_comment_button.png" />
+          <img class="feed-buttons" src="./images/feed_share_button.png" />
+        </div>
+        <div id="like-count-text">
+          <span>좋아요</span>
+          <span id="like-count">1003</span>
+        </div>
+      </div>
+      <form class="comments-create-form">
+        <div class="comment-container">
+          <div class="emoji">
+            <img class="smile" src="./images/smile.png" />
+            <div class="emoji-modal-overlay"></div>
+            <div class="emoji-modal">
+              <div class="emoji-modal-text">최고 인기 이모티콘</div>
+              <div class="emoji-icon-container">
+                <div class="emoji-icon">😂</div>
+                <div class="emoji-icon">😮</div>
+                <div class="emoji-icon">😍</div>
+                <div class="emoji-icon">😢</div>
+                <div class="emoji-icon">👏</div>
+                <div class="emoji-icon">🔥</div>
+                <div class="emoji-icon">🎉</div>
+              </div>
+              <div class="emoji-icon-container">
+                <div class="emoji-icon">💯</div>
+                <div class="emoji-icon">💖</div>
+                <div class="emoji-icon">🤣</div>
+                <div class="emoji-icon">🥰</div>
+                <div class="emoji-icon">😘</div>
+                <div class="emoji-icon">😭</div>
+                <div class="emoji-icon">😊</div>
+              </div>
+            </div>
+          </div>
+          <input class="comment" placeholder="댓글 달기..." />
+          <button class="comment-button">게시</button>
+        </div>
+      </form>
+      <div class="written-comments-container"></div>
+    </div>
+
+    <footer>
+      <p class="footer-message">Ⓒ2025 LIONGRAM</p>
+    </footer>
+  </body>
+  <script src="./instagram.js"></script>
+</html>
