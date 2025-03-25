@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./instagram.css"/>
+    <title>Document</title>
+</head>
+<body>
+  <main class="main-container">
+    <header class="header">
+      <img class="logo" src="./images/logo.png" />
+      <input class="search" placeholder="검색" />
+      <img class="icon-list" src="./images/icon_list.png" />
+    </header>
+
+    <div class="content-container">
+      <div class="story-container">
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">내 스토리</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">kid_oooooh</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jjang_jyo</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">hm_son7</div>
+        </div>
+        <div class="story-element">
+          <div class="story"></div>
+          <div class="story-owner">jennierubyjane</div>
+        </div>
+      </div>
+
+      <div class="story-modal">
+        <img id="story-image" src="./images/profile.png" />
+      </div>
+
+      <section class="article-container">
+        <div class="profile-container">
+          <div class="profile">
+            <img class="profile-image" src="./images/profile.png" />
+            <span class="profile-name">likelion_snu</span>
+          </div>
+          <div class="menu"></div>
+        </div>
+
+        <div class="profile-modal">
+          <img id="profile-modal" src="./images/likelion_snu.png" />
+        </div>
+
+        <div id="custom-alert">
+          <img src="https://i.pinimg.com/originals/d2/77/f2/d277f21e32db153580554b6ef4279dec.jpg" alt="alert" />
+          <span><strong>soomin_e1</strong>님이 회원님의 게시물을 좋아합니다</span>
+        </div>
+
+        <img class="article" src="./images/article.jpg" />
+        <div class="button-container">
+          <img class="feed-buttons" id="black-heart" src="./images/feed_like_button.png" />
+          <img id="red-heart" class="feed-buttons" src="./images/red-heart.png"/> 
+          <img class="feed-buttons" src="./images/feed_comment_button.png" />
+          <img class="feed-buttons" src="./images/feed_share_button.png" />
+          <div id="like-count-text">
+            <span>좋아요</span>
+            <span id="like-count">1003</span>
+          </div>
+        </div>
+
+        <form class="comments-create-form">
+          <div class="comment-container">
+            <img class="smile" src="./images/smile.png" />
+            <div class="emoji-modal">
+              <span>최고 인기 이모티콘</span>
+              <div class="emoji-content">
+                <span class="emoji">😂</span>
+                <span class="emoji">😮</span>
+                <span class="emoji">😍</span>
+                <span class="emoji">😢</span>
+                <span class="emoji">👏</span>
+                <span class="emoji">🔥</span>
+                <span class="emoji">🎉</span>
+                <br>
+                <span class="emoji">💯</span>
+                <span class="emoji">❤️</span>
+                <span class="emoji">🤣</span>
+                <span class="emoji">🥰</span>
+                <span class="emoji">😘</span>
+                <span class="emoji">😭</span>
+                <span class="emoji">🙂</span>
+              </div>
+            </div>
+            <input class="comment" placeholder="댓글 달기..." />
+            <button class="comment-button">게시</button>
+          </div>
+        </form>
+
+        <div class="written-comments-container">
+        </div>
+        
+      </section>
+      <footer>
+        <p class="footer-message">Ⓒ2025 LIONGRAM</p>
+      </footer>
+    </div>
+  </main>
+  <script src="./instagram.js"></script>
+</body>
+</html>
