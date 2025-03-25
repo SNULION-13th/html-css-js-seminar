@@ -105,6 +105,7 @@
   border-bottom: 2px solid #d3d3d3;
   padding-top: 5px;
 }
+
 .feed-buttons {
   width: 40px;
   margin-left: 3px;
@@ -143,4 +144,131 @@
   justify-content: center;
   color: gray;
   font-size: 15px;
+}
+
+.story-modal {
+  display: none; /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 1; /* 모달창을 제일 앞에 두기 */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 허용 auto */
+  cursor: pointer; /* 마우스 손가락모양 */
+  background-color: rgba(0, 0, 0, 0.8); /* 0.8은 투명도*/
+}
+
+#story-image {
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 모달 가운데에 놓기 */
+}
+
+#profile-modal {
+  display: none;
+  width: 325px;
+  height: 250px;
+}
+
+#like-count-text {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#red-heart {
+  display: none;
+}
+
+.comment-wrapper:hover > .comment-delete-icon {
+  display: block;
+}
+
+.comment-delete-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+.like-alert {
+  position: fixed;
+  top: 20px;
+  right: -400px; /* 시작 위치: 화면 밖 */
+  background: #444;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  width: 360px;
+  display: none;
+  z-index: 9999;
+  transition: right 0.5s ease;
+}
+
+.like-alert.show {
+  right: 20px; /* 슬라이드 인 */
+}
+
+.like-alert-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.like-alert-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.like-alert-article-image {
+  width: 90px;
+  height: 70px;
+  margin-left: 10px;
+}
+
+.like-alert-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.time {
+  font-size: 13px;
+  color: #ccc;
+  margin-left: 4px;
+}
+
+.comment-container {
+  position: relative;
+}
+
+.emoji-modal {
+  position: absolute;
+  top: 30px; /* ✅ 버튼 아래로 띄우기 (버튼 높이에 맞게 조정) */
+  left: 0; /* 또는 정확한 위치로 조절: 예) left: 5px */
+  background: #666;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.emoji-modal .emoji {
+  font-size: 24px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.title-emoji-modal {
+  font-size: 20px;
+  text-align: center;
 }
