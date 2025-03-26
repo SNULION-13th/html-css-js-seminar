@@ -8,8 +8,10 @@ storyElements.forEach((e) => {
   });
 });
 
-storyModal.addEventListener("click", () => {
-  storyModal.style.display = "none";
+storyModal.addEventListener("click", (e) => {
+  if (e.target === storyModal) {
+    storyModal.style.display = "none";
+  }
 });
 
 // 실습 2
@@ -38,6 +40,25 @@ blackHeart.addEventListener("click", () => {
 
   const count = likeCount.innerText;
   likeCount.innerText = parseInt(count) + 1;
+
+  const msg = document.createElement("div");
+  msg.className = "top-right-message";
+  msg.textContent = "OO님이 개시글을 좋아합니다.";
+  document.body.appendChild(msg);
+
+  // Force reflow before adding "show" class to trigger transition
+  requestAnimationFrame(() => {
+    msg.classList.add("show");
+  });
+
+  // Remove message after duration
+  setTimeout(() => {
+    msg.classList.remove("show");
+    msg.classList.add("hide");
+
+    // Remove element after transition ends
+    msg.addEventListener("transitionend", () => msg.remove());
+  }, 3000);
 });
 
 // 빨간색 하트를 눌렀을 때
@@ -58,13 +79,21 @@ const commentInput = document.querySelector(".comment");
 const commentsList = [];
 let commentId = 0;
 
+const emojiList = document.querySelectorAll(".emoji");
+
+emojiList.forEach((emoji) => {
+  emoji.addEventListener("click", () => {
+    commentInput.value += emoji.textContent;
+  });
+});
+
 commentsCreateForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const commentText = commentInput.value;
   if (!commentText) return;
   commentsList.push(commentText);
 
-  commentId = commentsList.length;
+  commentId = commentsList.length - 1;
   const commentNode = `
     <div class="comment-wrapper">
       <span class="comment">${commentText}</span>
@@ -107,4 +136,18 @@ const deleteComment = (id) => {
 const footer = document.querySelector(".footer-message");
 footer.innerText = `Ⓒ ${new Date().getFullYear()} INSTAGRAM FROM META`;
 
-const likeButton = document.getElementById("black-heart");
+const emojiModal = document.querySelector(".emoji-modal");
+const smileButton = document.querySelector(".smile");
+document.addEventListener("click", (e) => {
+  if (!emojiModal.contains(e.target) && !smileButton.contains(e.target)) {
+    emojiModal.style.display = "none";
+  }
+});
+
+smileButton.addEventListener("click", (e) => {
+  if (emojiModal.style.display === "block") {
+    emojiModal.style.display = "none";
+  } else {
+    emojiModal.style.display = "block";
+  }
+});
