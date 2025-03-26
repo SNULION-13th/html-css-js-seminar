@@ -40,7 +40,9 @@
           </div>
         </div>
         <div class="story-modal">
-          <img id="story-image" src="./images/profile.png" />
+          <div class="modal-content">
+            <img id="story-image" src="./images/profile.png" />
+          </div>
         </div>
         <section class="article-container">
           <div class="profile-container">
@@ -77,9 +79,22 @@
 
           <form class="comments-create-form">
             <div class="comment-container">
-              <img class="smile" src="./images/smile.png" />
-              <input class="comment" placeholder="댓글 달기..." />
-              <button type="submit" class="comment-button">게시</button>
+              <div>
+                <img class="smile" src="./images/smile.png" />
+                <input class="comment" placeholder="댓글 달기..." />
+                <button type="submit" class="comment-button">게시</button>
+              </div>
+              <div class="emoji-modal">
+                <p>최고 인기 이모티콘</p>
+                <div class="emoji-list">
+                  <span class="emoji">😀</span>
+                  <span class="emoji">😂</span>
+                  <span class="emoji">😍</span>
+                  <span class="emoji">🥰</span>
+                  <span class="emoji">😎</span>
+                  <!-- Add more emojis as needed -->
+                </div>
+              </div>
             </div>
           </form>
 
