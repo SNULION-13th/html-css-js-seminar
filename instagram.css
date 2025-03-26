@@ -168,6 +168,7 @@
   overflow: auto; /* 스크롤 허용 auto */
   cursor: pointer; /* 마우스 손가락모양 */
   background-color: rgba(0, 0, 0, 0.8); /* 0.8은 투명도*/
+  z-index: 500;
 }
 
 #story-image {
@@ -208,13 +209,29 @@
   position: fixed;
   top: 20px;
   right: -300px;
-  width: 230px;
-  padding: 15px;
-  background: rgb(40, 40, 40);
+  width: 300px;
+  padding: 0;
+  background: rgb(0, 0, 0);
   color: rgb(141, 141, 141);
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 1000;
+}
+
+.alert-title {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 10px;
+}
+
+.alert-message {
+  font-size: 12px;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  padding: 10px;
 }
 
 .alert.show {
@@ -233,7 +250,7 @@
   background: rgb(50, 50, 50);
   border: 1px solid #d3d3d3;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .emoji-selector .emoji-title {
