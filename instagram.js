@@ -25,26 +25,36 @@ profile_container.addEventListener("mouseout", () => {
   profile_modal.style.display = "none";
 });
 
-// 실습 3
+// 실습 3 & 과제 3 통합
 const likeCount = document.getElementById("like-count");
-likeCountNum = likeCount.innerText;
 const blackHeart = document.getElementById("black-heart");
 const redHeart = document.getElementById("red-heart");
+const notification = document.getElementById("notification");
+
+let isLiked = false; // 좋아요 상태
 
 blackHeart.addEventListener("click", () => {
-  redHeart.style.display = "inline";
-  blackHeart.style.display = "none";
+  if (!isLiked) {
+    redHeart.style.display = "inline";
+    blackHeart.style.display = "none";
 
-  const count = likeCount.innerText;
-  likeCount.innerText = parseInt(count) + 1;
+    likeCount.innerText = `${parseInt(likeCount.innerText) + 1}`;
+    notification.classList.add("show");
+
+    isLiked = true;
+  }
 });
 
 redHeart.addEventListener("click", () => {
-  blackHeart.style.display = "inline";
-  redHeart.style.display = "none";
+  if (isLiked) {
+    blackHeart.style.display = "inline";
+    redHeart.style.display = "none";
 
-  const count = likeCount.innerText;
-  likeCount.innerText = parseInt(count) - 1;
+    likeCount.innerText = `${parseInt(likeCount.innerText) - 1}`;
+    notification.classList.remove("show");
+
+    isLiked = false;
+  }
 });
 
 // 실습 4
@@ -79,7 +89,6 @@ commentsCreateForm.addEventListener("submit", (e) => {
 });
 
 // 실습 5
-
 const deleteComment = (id) => {
   commentsList.splice(id, 1);
 
@@ -98,15 +107,13 @@ const deleteComment = (id) => {
 const footer = document.querySelector(".footer-message");
 footer.innerText = `Ⓒ ${new Date().getFullYear()} INSTAGRAM FROM META`;
 
-//과제 1
-
+// 과제 1
 const logo = document.querySelector(".logo");
-
 logo.addEventListener("click", () => {
   location.reload();
 });
 
-//과제 2
+// 과제 2
 const iconList = document.querySelector(".icon-list");
 
 iconList.addEventListener("mouseenter", () => {
@@ -129,45 +136,7 @@ feedButton.forEach((button) => {
   });
 });
 
-// 과제 3
-
-const notification = document.getElementById("notification");
-
-let isLiked = false;
-
-redHeart.addEventListener("click", () => {
-  if (!isLiked) {
-    notification.classList.add("show");
-  } else {
-    notification.classList.remove("show");
-  }
-
-  isLiked = !isLiked;
-});
-
-blackHeart.addEventListener("click", () => {
-  redHeart.style.display = "inline";
-  blackHeart.style.display = "none";
-
-  const count = likeCount.innerText;
-  likeCount.innerText = `${parseInt(count) + 1}`;
-
-  notification.classList.add("show");
-  isLiked = true;
-});
-
-redHeart.addEventListener("click", () => {
-  blackHeart.style.display = "inline";
-  redHeart.style.display = "none";
-
-  const count = likeCount.innerText;
-  likeCount.innerText = `${parseInt(count) - 1}`;
-
-  notification.classList.remove("show"); //
-  isLiked = false;
-});
-
-//과제 4
+// 과제 4
 const storyImage = document.getElementById("story-image");
 
 storyElements.forEach((el) => {
@@ -184,7 +153,7 @@ storyModal.addEventListener("click", () => {
   storyModal.style.display = "none";
 });
 
-//과제 5
+// 과제 5
 const emojiModal = document.querySelector(".emoji-modal");
 const emojiButton = document.querySelector(".smile");
 const emojiList = document.querySelectorAll(".emoji");
@@ -200,7 +169,7 @@ emojiButton.addEventListener("click", () => {
 emojiList.forEach((emoji) => {
   emoji.addEventListener("click", () => {
     commentInput.value += emoji.innerText;
-    emojiModal.style.display = "none"; //
+    emojiModal.style.display = "none";
     commentInput.focus();
   });
 });
