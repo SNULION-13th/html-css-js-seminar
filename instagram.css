@@ -16,6 +16,7 @@
 
 .header .logo {
   height: 100%; /* 30px */
+  cursor: pointer;
 }
 
 .header .search {
@@ -195,4 +196,73 @@
   height: 12px;
   cursor: pointer;
   display: none;
+}
+
+/* w3 hw */
+#like-modal {
+  position: fixed;
+  top: 20%;
+  right: -100%;
+  padding: 0.8rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  transition: all 1s ease-in-out;
+}
+
+#like-modal.show {
+  right: 20%;
+  transition: all 1s ease-in-out;
+}
+
+.modal-profile-img {
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.smile {
+  cursor: pointer;
+}
+
+.emoji-modal {
+  display: none;
+}
+
+.emoji-modal.show {
+  position: fixed;
+  top: 59%;
+  left: 35%;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.emoji-title {
+  color: lightgray;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+}
+
+.emojis {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.emoji {
+  cursor: pointer;
+  padding: 0.1rem;
+  border-radius: 10%;
+}
+
+.emoji:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }

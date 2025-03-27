@@ -32,9 +32,9 @@ storyElements.forEach((storyElement) => {
 // 앞서 정의한 storyModal 에 eventListener를 추가하세요.
 // eventType은 'click' 이며, eventHandler의 기능은 다음과 같습니다.
 // eventHandler 기능 : 앞서 정의한 storyModal의 style.display 속성을 "none"으로 바꿈.
-storyModal.addEventListener("click", () => {
-  storyModal.style.display = "none";
-});
+// storyModal.addEventListener("click", () => {
+//   storyModal.style.display = "none";
+// });
 
 //////////// 실습2 ////////////
 
@@ -164,3 +164,68 @@ const deleteComment = (id) => {
     )
     .join("");
 };
+
+//// 3주차 과제
+
+// 1. header 'Instagram' 클릭으로 새로고침
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", () => {
+  location.reload();
+});
+
+// 2. 아이콘(header, article)에 hover하면 투명도
+const icons = document.querySelectorAll(
+  ".logo, .icon-list, .feed-buttons, .menu"
+);
+icons.forEach((icon) => {
+  icon.addEventListener("mouseover", () => {
+    icon.style.opacity = 0.4;
+  });
+  icon.addEventListener("mouseout", () => {
+    icon.style.opacity = 1;
+  });
+});
+
+// 3. 좋아요 하트 버튼을 누르면 오른쪽에서 왼쪽으로 알림창 추가
+const likeModal = document.getElementById("like-modal");
+
+blackHeart.addEventListener("click", () => {
+  likeModal.classList.add("show");
+});
+
+likeModal.addEventListener("click", () => {
+  likeModal.classList.remove("show"); // modal 클릭하면 창 닫기
+});
+
+redHeart.addEventListener("click", () => {
+  likeModal.classList.remove("show"); // 좋아요 취소 시 창 닫기
+});
+
+// 4. 스토리 모달 사진 자체는 눌러도 변화없고, 나머지 공간 눌러야 해제
+storyModal.addEventListener("click", (e) => {
+  if (e.target === storyModal) {
+    storyModal.style.display = "none";
+  }
+});
+
+// 5. 이모티콘 누르면 '최고인기이모티콘’ 모달 띄우고 이모티콘 선택시 댓글에 적히게 해주세요
+const emojiIcon = document.querySelector(".smile");
+const emojiModal = document.querySelector(".emoji-modal");
+emojiIcon.addEventListener("click", () => {
+  // emojiIcon을 클릭했을 때 모달이 열려있다면 닫고, 닫혀있다면 열기
+  if (emojiModal.classList.contains("show")) {
+    emojiModal.classList.remove("show");
+  } else {
+    emojiModal.classList.add("show");
+  }
+});
+
+const emojis = document.querySelectorAll(".emoji");
+emojis.forEach((emoji) => {
+  emoji.addEventListener("click", () => {
+    emojiText = emoji.innerText;
+    commentInput.value += emojiText;
+  });
+});
+
+// 기능은 다했고.. 규격만 맞추자
